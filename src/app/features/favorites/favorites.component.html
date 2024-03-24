@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="text-principal">
+    <h2 class="font-monospace text-capitalize  text-center text-light">Seus Filmes Favoritos</h2>
+    </div>
+    <div class="row row-cols-1 row-cols-md-6 g-2" *ngIf="moviesDetails">
+      <div class="col" *ngFor="let movie of moviesDetails; let i = index">
+        <div class="text-center position-relative">
+          <div [routerLink]="['/detail', movie.imdbID]" style="cursor: pointer;">
+            <img src="{{ movie.poster }}" class="img-fluid rounded custom-img" alt="{{ movie.title }}">
+            <div class="mt-2 text-center">
+              <small class="text-light font-monospace">{{ movie.title }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

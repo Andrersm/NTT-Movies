@@ -1,0 +1,22 @@
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <div class="col-md-6 d-flex justify-content-start align-items-center">
+            <div class="movie-img-container">
+                <img src="{{ movie?.poster }}" class="custom-img">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="movie-info">
+                <h2>{{ movie?.title }}</h2>
+                <p><strong>Ano de Lançamento:</strong> {{ movie?.released }}</p>
+                <p><strong>Diretor:</strong> {{ movie?.director }}</p>
+                <p><strong>Gênero:</strong> {{ movie?.genre }}</p>
+                <p><strong>Escritor(es):</strong> {{ movie?.writer }}</p>
+                <p><strong>Elenco:</strong> {{ movie?.actors }}</p>
+                <p><strong>Metascore:</strong> {{ movie?.metascore }}</p>
+                <p><strong>Duração:</strong> {{ movie?.runtime }}</p>
+                <p><strong>Sinopse:</strong> {{ movie?.plot }}</p>
+            </div>
+        </div>
+    </div>
+</div>

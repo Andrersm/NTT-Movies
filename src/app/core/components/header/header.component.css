@@ -1,0 +1,42 @@
+
+.navbar {
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem; 
+  }
+  
+  
+  .nav-link {
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem; 
+  }
+  
+  
+  .navbar-logo {
+    max-height: 30px; 
+    width: auto;
+    transform: scale(4); 
+    transform-origin: left center;
+    padding-right: -10px;
+  }
+  
+  
+  @media (max-width: 992px) {
+    .navbar {
+      padding-top: 0.25rem; 
+      padding-bottom: 0.25rem; 
+    }
+  
+    .navbar-logo {
+      max-height: 30px; 
+    }
+  
+    
+    .nav-link {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+  }
+  .navbar-brand {
+    margin-right: 100px; 
+  }
+  

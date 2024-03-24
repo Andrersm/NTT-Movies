@@ -1,0 +1,21 @@
+<div class="container">
+    <div *ngFor="let movies of movieLists; let i = index">
+      <h2 class="font-monospace text-capitalize text-light">{{moviePhrases[i]}}</h2>
+      <div class="row row-cols-1 row-cols-md-6 g-2 custom-rows">
+        <div class="col" *ngFor="let movie of movies | slice:0:6">
+          <div class="text-center position-relative movie-img-container">
+            <div class="clickable-area" [routerLink]="['/detail', movie.imdbID]">
+              <img src="{{ movie.poster }}" class="img-fluid rounded custom-img" alt="{{ movie.title }}">
+              <div class="mt-2 text-center">
+                <small class="text-light font-monospace">{{ movie.title }}</small>
+              </div>
+            </div>
+            <i [ngClass]="{'bi-bookmark-fill': isFav(movie.imdbID), 'bi-bookmark': !isFav(movie.imdbID)}"
+               class="bi position-absolute bookmark-icon"
+               (click)="toggleFav(movie.imdbID)">
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

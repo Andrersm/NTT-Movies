@@ -1,0 +1,52 @@
+.content {
+    padding-top: 100px; /* Altura do Header */
+    padding-bottom: 60px; /* Altura do Footer */
+  }
+
+  .custom-img {
+    border-radius: 20px !important;
+    object-fit: cover; 
+    width: 90%; 
+    height: 270px;
+    transition: transform 0.3s ease, border 0.3s ease; 
+    border: 3px solid transparent; 
+  }
+  .custom-img:hover {
+      border: 3px solid white; 
+      cursor: pointer; 
+      transform: scale(1.05);
+    }
+  
+    body {
+      background-color: blue;
+  }
+  
+  .container {
+      padding-top: 100px;
+      max-width: 70%;
+  }
+  
+  .bookmark-icon {
+    scale: 1.5; 
+    transition: transform 0.3s ease; 
+  }
+  
+  .position-relative:hover .bookmark-icon {
+    transform: scale(1.2); 
+  }
+  
+  .position-relative .bookmark-icon {
+    top: 3px; 
+    right: 20px; 
+    color: #1c945c; 
+    position: absolute; 
+  }
+  .bi-bookmark{
+    border-style: inherit;
+    border-color: black;
+  }
+
+  .text-principal{
+    padding-bottom: 40px;
+}
+  

@@ -1,0 +1,20 @@
+.container-fluid, .row, .col-md-6 {
+    height: 90vh; 
+  }
+  
+  .custom-img {
+    scale: 150% !important ;
+    height: auto; 
+    aspect-ratio: 2 / 3;
+    border-radius: 4000px !important;
+    padding-left: 300px;
+    padding-bottom: -20px;
+    padding-top: 50px;
+  }
+  
+  .movie-info {
+    padding-top: 250px;
+    color:aliceblue;
+    padding-right: 400px;
+  
+  }
