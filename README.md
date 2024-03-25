@@ -1,60 +1,61 @@
 
 # Academia NTT DATA - Gerenciador de Filmes
 
-Este projeto foi desenvolvido como parte de uma iniciativa da Academia da NTT DATA. Trata-se de um aplicativo web criado com Angular, projetado para fornecer uma interface amigável para a listagem de filmes, pesquisa, e gestão de favoritos. O aplicativo consome uma API externa para buscar informações de filmes e permite ao usuário adicionar filmes aos seus favoritos, que são salvos no LocalStorage para acesso posterior.
+Este projeto, desenvolvido para a Academia da NTT DATA, é um aplicativo web construído com Angular. Ele serve como uma ferramenta amigável para a visualização e gerenciamento de filmes, aproveitando uma API externa para a busca e listagem de filmes, bem como para adicionar filmes aos favoritos, que são mantidos no LocalStorage para acesso futuro.
 
-## Funcionalidades
+## Funcionalidades Principais
 
-- **Listagem de Filmes**: Exibe uma lista de filmes obtida a partir de uma API.
-- **Pesquisa de Filmes**: Permite ao usuário pesquisar filmes por título através da API.
-- **Detalhes de Filmes Únicos**: O usuário pode visualizar detalhes de um filme específico.
-- **Favoritos**: Os usuários podem adicionar filmes à sua lista de favoritos e visualizá-los separadamente.
-- **NGRX Store**: Utiliza NGRX para gerenciamento de estado reativo para Angular.
-- **Testes**: Inclui um conjunto de testes básicos, demonstrando a importância dos testes em projetos de desenvolvimento de software.
+- **Listagem de Filmes**: Mostra filmes a partir de uma API.
+- **Pesquisa de Filmes**: Facilita a busca de filmes por título.
+- **Detalhes de Filmes Únicos**: Oferece informações detalhadas sobre filmes específicos.
+- **Favoritos**: Permite marcar filmes como favoritos e gerenciar essa lista.
+- **Gerenciamento de Estado com NGRX**: Utiliza a biblioteca NGRX para manejo eficiente do estado, principalmente para armazenar termos de busca, como parte de um estudo sobre gestão de estado.
 
-## Tecnologias Utilizadas
+## Tecnologias
 
-- **Angular**: Framework utilizado para o desenvolvimento do aplicativo.
-- **NGRX**: Biblioteca de gerenciamento de estado reativo para Angular.
-- **LocalStorage**: Para armazenar os favoritos dos usuários.
+- **Angular**: Framework de desenvolvimento do app.
+- **NGRX**: Para gestão de estado reativo.
+- **LocalStorage**: Armazenamento dos dados de favoritos.
 
 ## Pré-requisitos
 
-Para rodar este projeto, você precisará ter o Node.js e o Angular CLI instalados em sua máquina.
+É necessário ter o Node.js e o Angular CLI instalados para rodar este projeto.
 
-## Instalação e Execução
+## Como Instalar e Rodar
 
-1. Clone o repositório para sua máquina local usando:
+1. Clone o projeto:
 
-\`\`\`
-git clone <https://github.com/Andrersm/NTT-Movies>
-\`\`\`
+```bash
+git clone https://github.com/Andrersm/NTT-Movies
+```
 
-2. Navegue até a pasta do projeto e instale as dependências necessárias usando:
+2. Instale as dependências:
 
-\`\`\`
+```bash
 npm install
-\`\`\`
+```
 
-3. Para iniciar o servidor de desenvolvimento e abrir o aplicativo no navegador, execute:
+3. Inicie o servidor de desenvolvimento:
 
-\`\`\`
-ng serve --open
-\`\`\`
+```bash
+$ ng serve --open
+```
 
-O aplicativo agora deve estar rodando em \`http://localhost:4200/\`.
+Agora, o aplicativo deve estar funcionando em \`http://localhost:4200/\`.
 
 ## Testes
 
-Para executar os testes, use o seguinte comando:
+Um conjunto de testes básicos foi implementado, focando especialmente no componente de busca (\`search.Component\`), para demonstrar a importância dos testes em projetos de software. Esses testes servem mais como uma demonstração didática do que uma cobertura de teste completa do projeto.
 
-\`\`\`
-ng test
-\`\`\`
+Para rodar os testes:
 
-Isso iniciará o Karma e executará os testes especificados.
+```
+$ ng test
+```
+
+Isso irá iniciar o Karma e executar os testes especificados.
 
 ## Demonstração Online
 
-O projeto está hospedado na Vercel e pode ser acessado através do seguinte link: [Academia NTT DATA - Gerenciador de Filmes](https://ntt-movies-steel.vercel.app/)
+Visite [Academia NTT DATA - Gerenciador de Filmes](https://ntt-movies-steel.vercel.app/) para ver o projeto em ação. Hospedado na Vercel, oferece um vislumbre prático das funcionalidades desenvolvidas.
 
