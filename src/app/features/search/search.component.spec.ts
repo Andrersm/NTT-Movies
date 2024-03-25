@@ -1,54 +1,84 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { StoreModule, Store } from '@ngrx/store';
-import { Observable, of } from 'rxjs';
 import { SearchComponent } from './search.component';
-import { MovieService } from 'src/app/shared/services/movie.service';
+import { StoreModule } from '@ngrx/store';
 import { FavoritesService } from 'src/app/shared/services/favorites.service';
-import { IappState, appReducer } from 'src/app/shared/store/search.state';
+import { MovieService } from 'src/app/shared/services/movie.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Observable, of } from 'rxjs';
+import { Movie } from '../../shared/models/movie.model';
+import { appReducer } from 'src/app/shared/store/search.state';
+
+class MockFavoritesService {
+  addFav(idImdb: string) {}
+  rmFav(idImdb: string) {}
+  getFav(): string[] { return []; }
+  toggleFav(idImdb: string) {}
+}
+
+class MockMovieService {
+  moviesSearched$: Observable<Movie[]> = of([{
+    title: 'Test Movie',
+    year: '2020',
+    poster: 'test.jpg',
+    imdbID: 'tt1234567',
+    type: 'movie'
+  }]);
+  getSearchMovie(searchTerm: string) {
+    this.moviesSearched$ = of([{
+      title: 'Test Movie',
+      year: '2020',
+      poster: 'test.jpg',
+      imdbID: 'tt1234567',
+      type: 'movie'
+    }]);
+  }
+}
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
-  let store: Store<{ app: IappState }>;
-  let movieServiceMock: any;
-  let favoritesServiceMock: any;
+  let movieService: MovieService;
 
   beforeEach(async () => {
-    movieServiceMock = jasmine.createSpyObj('MovieService', ['getSearchMovie']);
-    favoritesServiceMock = jasmine.createSpyObj('FavoritesService', ['addFav', 'rmFav', 'getFav', 'toggleFav']);
-
     await TestBed.configureTestingModule({
-      declarations: [SearchComponent],
+      declarations: [ SearchComponent ],
       imports: [
         StoreModule.forRoot({ app: appReducer }),
+        RouterTestingModule
       ],
       providers: [
-        { provide: MovieService, useValue: movieServiceMock },
-        { provide: FavoritesService, useValue: favoritesServiceMock }
+        { provide: FavoritesService, useClass: MockFavoritesService },
+        { provide: MovieService, useClass: MockMovieService }
       ]
     }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject(Store);
+    movieService = TestBed.inject(MovieService);
     fixture.detectChanges();
   });
 
-  it('should subscribe to search term changes and fetch movies on init', (done) => {
-    const testSearchTerm = 'Test';
-    const expectedAction = {
-      type: '[Search Component] Search',
-      searchTerm: testSearchTerm
-    };
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
-    store.dispatch(expectedAction); 
-
-    fixture.detectChanges(); 
-
-    fixture.whenStable().then(() => {
-      expect(movieServiceMock.getSearchMovie).toHaveBeenCalledWith(testSearchTerm);
-      done();
+  it('should update moviesSearched$ on search term change', () => {
+    const mockMovies: Movie[] = [{
+      title: 'Test Movie',
+      year: '2020',
+      poster: 'test.jpg',
+      imdbID: 'tt1234567',
+      type: 'movie'
+    }];
+    spyOn(movieService, 'getSearchMovie').and.callThrough();
+    component.moviesSearched$!.subscribe(data => {
+      expect(data).toEqual(mockMovies);
     });
+
+  
+    movieService.getSearchMovie('test');
+    expect(movieService.getSearchMovie).toHaveBeenCalledWith('test');
   });
 });

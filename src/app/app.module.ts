@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/components/header/header.component';
-import { FooterComponent } from './core/components/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomeComponent } from './features/home/home.component';
 import { FavoritesComponent } from './features/favorites/favorites.component';
 import { SearchComponent } from './features/search/search.component';

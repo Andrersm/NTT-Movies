@@ -1,27 +1,60 @@
-# DamnFilmes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+# Academia NTT DATA - Gerenciador de Filmes
 
-## Development server
+Este projeto foi desenvolvido como parte de uma iniciativa da Academia da NTT DATA. Trata-se de um aplicativo web criado com Angular, projetado para fornecer uma interface amigável para a listagem de filmes, pesquisa, e gestão de favoritos. O aplicativo consome uma API externa para buscar informações de filmes e permite ao usuário adicionar filmes aos seus favoritos, que são salvos no LocalStorage para acesso posterior.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- **Listagem de Filmes**: Exibe uma lista de filmes obtida a partir de uma API.
+- **Pesquisa de Filmes**: Permite ao usuário pesquisar filmes por título através da API.
+- **Detalhes de Filmes Únicos**: O usuário pode visualizar detalhes de um filme específico.
+- **Favoritos**: Os usuários podem adicionar filmes à sua lista de favoritos e visualizá-los separadamente.
+- **NGRX Store**: Utiliza NGRX para gerenciamento de estado reativo para Angular.
+- **Testes**: Inclui um conjunto de testes básicos, demonstrando a importância dos testes em projetos de desenvolvimento de software.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
+- **Angular**: Framework utilizado para o desenvolvimento do aplicativo.
+- **NGRX**: Biblioteca de gerenciamento de estado reativo para Angular.
+- **LocalStorage**: Para armazenar os favoritos dos usuários.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Pré-requisitos
 
-## Running unit tests
+Para rodar este projeto, você precisará ter o Node.js e o Angular CLI instalados em sua máquina.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instalação e Execução
 
-## Running end-to-end tests
+1. Clone o repositório para sua máquina local usando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+\`\`\`
+git clone <https://github.com/Andrersm/NTT-Movies>
+\`\`\`
 
-## Further help
+2. Navegue até a pasta do projeto e instale as dependências necessárias usando:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+\`\`\`
+npm install
+\`\`\`
+
+3. Para iniciar o servidor de desenvolvimento e abrir o aplicativo no navegador, execute:
+
+\`\`\`
+ng serve --open
+\`\`\`
+
+O aplicativo agora deve estar rodando em \`http://localhost:4200/\`.
+
+## Testes
+
+Para executar os testes, use o seguinte comando:
+
+\`\`\`
+ng test
+\`\`\`
+
+Isso iniciará o Karma e executará os testes especificados.
+
+## Demonstração Online
+
+O projeto está hospedado na Vercel e pode ser acessado através do seguinte link: [Academia NTT DATA - Gerenciador de Filmes](https://ntt-movies-steel.vercel.app/)
+

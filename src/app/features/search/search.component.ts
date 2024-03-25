@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, map, switchMap, tap } from 'rxjs';
-import { Movie } from 'src/app/core/components/models/movie.model';
+import { Observable, map, tap } from 'rxjs';
+import { Movie } from '../../shared/models/movie.model';
 import { FavoritesService } from 'src/app/shared/services/favorites.service';
 import { MovieService } from 'src/app/shared/services/movie.service';
 import { IappState } from 'src/app/shared/store/search.state';

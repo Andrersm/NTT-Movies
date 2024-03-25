@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Movie, MovieDetails } from 'src/app/core/components/models/movie.model';
+import { Movie, MovieDetails } from '../../shared/models/movie.model';
 import { BehaviorSubject, Observable, catchError, forkJoin, map, of } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 
